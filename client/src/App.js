@@ -60,8 +60,8 @@ class App extends Component {
         <img className="large_cloud" src={cloud} />
         <img className="small_cloud" src={cloud} />
         <div style={{display: 'flex', justifyContent: 'center'}}>
-        <WordCloud words={this.state.words} />
-        <div className="avatar" style={{backgroundImage: `url(${this.state.avatar})`}} />
+          <WordCloud words={this.state.words} />
+          <div className="avatar" style={{backgroundImage: `url(${this.state.avatar})`}} />
           <img className="stick_figure" src={stickFigure} />
         </div>
         <div className="ground">
