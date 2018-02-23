@@ -33,6 +33,8 @@ class App extends Component {
   handleSearchFail() {
     this.setState({
       words: [],
+      handle: '',
+      avatar: twitterEgg,
       hasError: true,
       loading: false
     })
