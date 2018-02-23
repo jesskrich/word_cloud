@@ -26,6 +26,7 @@ class App extends Component {
       handle: '@' + data.handle,
       words: data.words,
       avatar: data.avatar,
+      hasError: false,
       loading: false
     })
   }
@@ -40,7 +41,8 @@ class App extends Component {
     })
   }
 
-  getData(handle) {
+  getData(handle, loading) {
+    this.setState({loading: loading})
     fetch('/cloud/' + handle)
       .then(res => {
         if (res.ok) {
@@ -53,6 +55,14 @@ class App extends Component {
       .catch(err => this.handleSearchFail())
   }
 
+  showToUser() {
+    if (this.state.loading)
+      return <p>Loading...</p>
+    if (this.state.hasError)
+      return <p>Please enter a valid Twitter handle</p>
+    return <WordCloud words={this.state.words} />
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,7 +72,7 @@ class App extends Component {
         <img className="large_cloud" src={cloud} />
         <img className="small_cloud" src={cloud} />
         <div style={{display: 'flex', justifyContent: 'center'}}>
-          <WordCloud words={this.state.words} />
+          {this.showToUser()}
           <div className="avatar" style={{backgroundImage: `url(${this.state.avatar})`}} />
           <img className="stick_figure" src={stickFigure} />
         </div>

@@ -35,7 +35,7 @@ removeLinks = (splitTweet) => {
 }
 
 getRandomTweets = (tweets) => {
-  const sampleTweets = _.sampleSize(tweets, 25)
+  const sampleTweets = _.sampleSize(tweets, 200)
   return _.map(sampleTweets, function(tweet) {
     if (!tweet.truncated) {
       const splitTweet = tweet.text.split(/[^A-Za-z_#@]/)
@@ -49,7 +49,7 @@ getRandomTweets = (tweets) => {
 router.get('/:twitterhandle', function(req, res, next) {
   const twitterHandle = req.params.twitterhandle;
   twitter.get('statuses/user_timeline/' + twitterHandle,
-              {count: 6000, exclude_replies: true, include_rts: false},
+              {count: 4000, exclude_replies: true, include_rts: false},
               function(error, tweets, response) {
     if (error) {
       res.status(400).send({error: 'Page not found'})

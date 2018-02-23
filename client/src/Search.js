@@ -5,7 +5,8 @@ class Search extends Component {
   constructor(props) {
     super(props)
       this.state = {
-        handle: ''
+        handle: '',
+        loading: true
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,7 +19,7 @@ class Search extends Component {
   }
 
   handleSubmit(event) {
-    {this.props.getData(this.state.handle)};
+    {this.props.getData(this.state.handle, this.state.loading)};
     event.preventDefault();
     this.setState({
       handle: ''
