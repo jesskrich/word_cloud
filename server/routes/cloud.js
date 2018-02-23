@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var _ = require('lodash');
-var stopwords = require('stopwords').english
+const _ = require('lodash');
+const stopwords = require('stopwords').english
 
-var twit = require('twitter'),
+const twit = require('twitter'),
   twitter = new twit({
-    consumer_key: '~',
-    consumer_secret: '~',
-    access_token_key: '~',
-    access_token_secret: '~'
-  });
+    consumer_key: 'jXZ0z8Pr1PZ0rZ4QchBNytwG4',
+    consumer_secret: 'MB9BxQFGOzJNs1qWevnpSZHmmtv9eGwm2UeMW8NxWHwZwx9R79',
+    access_token_key: '25520772-zlxIXdGuHq813JABymvdsUsfcyqze25fEroZbSCMk',
+    access_token_secret: '2lgqbGqaeA1Bt97aSznBtxfRqyC3vpPuwSsLr8xHZxx3G'
+} );
 
 mapWords = (cleaned) => {
   return _.reduce(cleaned, function(wordMap, w) {
@@ -27,7 +27,7 @@ removeStopWords = (trimmed) => {
 }
 
 removeLinks = (splitTweet) => {
-  var tweetWithoutLink = splitTweet.splice(0,splitTweet.indexOf('https')-1)
+  const tweetWithoutLink = splitTweet.splice(0,splitTweet.indexOf('https')-1)
   if (tweetWithoutLink.length !== 0) {
     return removeStopWords(tweetWithoutLink)
   }
@@ -35,10 +35,10 @@ removeLinks = (splitTweet) => {
 }
 
 getRandomTweets = (tweets) => {
-  var sampleTweets = _.sampleSize(tweets, 25)
+  const sampleTweets = _.sampleSize(tweets, 25)
   return _.map(sampleTweets, function(tweet) {
     if (!tweet.truncated) {
-      var splitTweet = tweet.text.split(/[^A-Za-z_#@]/)
+      const splitTweet = tweet.text.split(/[^A-Za-z_#@]/)
       return removeLinks(splitTweet)
     }
   })
