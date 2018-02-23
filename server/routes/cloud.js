@@ -5,10 +5,10 @@ const stopwords = require('stopwords').english
 
 const twit = require('twitter'),
   twitter = new twit({
-    consumer_key: 'jXZ0z8Pr1PZ0rZ4QchBNytwG4',
-    consumer_secret: 'MB9BxQFGOzJNs1qWevnpSZHmmtv9eGwm2UeMW8NxWHwZwx9R79',
-    access_token_key: '25520772-zlxIXdGuHq813JABymvdsUsfcyqze25fEroZbSCMk',
-    access_token_secret: '2lgqbGqaeA1Bt97aSznBtxfRqyC3vpPuwSsLr8xHZxx3G'
+    consumer_key: '~',
+    consumer_secret: '~',
+    access_token_key: '~',
+    access_token_secret: '~'
 } );
 
 mapWords = (cleaned) => {
