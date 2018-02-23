@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+.sun {
+  max-width: 10%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 130px;
+  z-index: 200;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: black solid 2px;
+}
+
+.small_cloud {
+  max-width: 15%;
+  margin: 50px;
+  margin-bottom: 0px;
+}
+
+.large_cloud {
+  max-width: 25%;
+  margin: 50px;
+  margin-bottom: 0px;
+}
+
+.stick_figure {
+  height: 250px;
+  position: fixed;
+  bottom: -12px;
+  z-index: 100;
+}
+
+.ground {
+  height: 100px;
+  width: 100%;
+  bottom: 0px;
+  position: fixed;
+  background-color: #2CCC29;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
