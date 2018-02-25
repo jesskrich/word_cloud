@@ -52,7 +52,8 @@ router.get('/:twitterhandle', function(req, res, next) {
               {count: 4000, exclude_replies: true, include_rts: false},
               function(error, tweets, response) {
     if (error) {
-      res.status(400).send({error: 'Page not found'})
+      console.log(error)
+      res.status(400).send({error: error})
     } else {
       const randTwits = getRandomTweets(tweets)
       const combinedTwits = [].concat(...randTwits)

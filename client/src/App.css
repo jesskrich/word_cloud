@@ -1,5 +1,12 @@
+
 .App {
   text-align: center;
+  min-height: 100vh;
+
+}
+
+.app-storm {
+  animation: change-color 4s forwards;
 }
 
 .sun {
@@ -7,6 +14,22 @@
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+.sun-spin {
+  animation: sun-spin infinite 20s linear;
+}
+
+.sun-slide-in {
+  animation: sun-slide-in .5s ease-in forwards;
+}
+
+.sun-slide-out {
+  animation: sun-slide-out .5s ease-in forwards;
+}
+
+.sun-slide-out {
+
 }
 
 .avatar {
@@ -21,16 +44,29 @@
   border: black solid 2px;
 }
 
+.cloud_container {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rain_conatainer {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .small_cloud {
-  max-width: 15%;
-  margin: 50px;
-  margin-bottom: 0px;
+  width: 25%;
+  height: 25%;
 }
 
 .large_cloud {
-  max-width: 25%;
-  margin: 50px;
-  margin-bottom: 0px;
+  width: 50%;
+  height: 50%;
 }
 
 .stick_figure {
@@ -51,4 +87,44 @@
 ul {
   list-style-type: none;
   padding: 0px;
+}
+
+li {
+  animation: li
+}
+
+@keyframes sun-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes change-color {
+  from {
+    background-color: #A7D7FF;
+  }
+  to {
+      background-color: #263E40;
+    }
+}
+
+@keyframes sun-slide-out {
+  from {
+    transform: translateX(0%)
+  }
+  to {
+      transform: translateX(-250px)
+    }
+}
+
+@keyframes sun-slide-in {
+  from {
+    transform: translateX(-250px)
+  }
+  to {
+      transform: translateX(0%)
+    }
 }

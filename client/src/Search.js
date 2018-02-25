@@ -28,7 +28,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div style={{margin: 15}}>
+      <div style={{marginBottom: 50}}>
         <form onSubmit={this.handleSubmit}>
           <label>
             <input type="text"
